@@ -41,6 +41,7 @@ namespace ProteinTagger
 		{
 			OpenFileDialog dialog = new OpenFileDialog();
 			dialog.CheckFileExists = true;
+			dialog.Title = "Load UniProt XML dataset";
 			dialog.Filter = "UniProt XML File (*.xml)|*.xml|All files (*.*)|*.*";
 			if (dialog.ShowDialog() == true)
 			{
@@ -48,11 +49,12 @@ namespace ProteinTagger
 				ViewModel.SetupFromUniProt(db);
 			}
 		}
-		
+
 		private void btnLoadChangeOrders_Click(object sender, RoutedEventArgs e)
 		{
 			OpenFileDialog dialog = new OpenFileDialog();
 			dialog.CheckFileExists = true;
+			dialog.Title = "Load Change Orders";
 			dialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
 			if (dialog.ShowDialog() == true)
 			{
@@ -63,10 +65,23 @@ namespace ProteinTagger
 		private void btnSaveChangeOrders_Click(object sender, RoutedEventArgs e)
 		{
 			SaveFileDialog dialog = new SaveFileDialog();
+			dialog.Title = "Save Change Orders";
 			dialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
 			if (dialog.ShowDialog() == true)
 			{
 				ViewModel.SaveChangeOrdersFile(dialog.FileName);
+			}
+		}
+
+
+		private void btnExportTagged_Click(object sender, RoutedEventArgs e)
+		{
+			SaveFileDialog dialog = new SaveFileDialog();
+			dialog.Title = "Export tags file";
+			dialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
+			if (dialog.ShowDialog() == true)
+			{
+				ViewModel.ExportTags(dialog.FileName);
 			}
 		}
 

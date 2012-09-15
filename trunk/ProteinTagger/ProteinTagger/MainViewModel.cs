@@ -263,5 +263,10 @@ namespace ProteinTagger
 			set { if (_Tags != value) { _Tags = value; RaisePropertyChanged("Tags"); } }
 		}
 		List<string> _Tags;
+
+		internal void ExportTags(string p)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
