@@ -264,9 +264,9 @@ namespace ProteinTagger
 		}
 		List<string> _Tags;
 
-		internal void ExportTags(string p)
+		public void ExportTags(string filename)
 		{
-			throw new NotImplementedException();
+			_ProteinDB.SaveJsonFile(filename);
 		}
 	}
 }
