@@ -79,7 +79,7 @@ namespace ProteinTagger
 		{
 			try
 			{
-				JsonSerializerHelper.SaveJsonFile(_ChangeOrders, filename);
+				_ChangeOrders.SaveJsonFile(filename);
 			}
 			catch (Exception ex)
 			{
@@ -87,6 +87,20 @@ namespace ProteinTagger
 				throw;
 			}
 			Log("Change Orders file saved: {0}", filename);
+		}
+
+		public void ExportTags(string filename)
+		{
+			try
+			{
+				ProteinDB.SaveJsonFile(filename);
+			}
+			catch (Exception ex)
+			{
+				Log("Error exporting tags file: \"{0}\" | {1}", filename, ex.Message);
+				throw;
+			}
+			Log("Tags file exported: {0}", filename);
 		}
 
 		public Action<string> LogFn;
@@ -109,6 +123,7 @@ namespace ProteinTagger
 					Chains = x.AsEnumerable()
 				});
 			Log("{0} chain names found in {1} chains", ChainNames.Count(), ProteinDB.Count());
+			Stats = ProteinDB.GroupBy(x => x.Tag).Select(x => new { Tag = x.Key, Count = x.Count() });
 			OnSelectedChainNamesChanged();
 		}
 
@@ -263,10 +278,12 @@ namespace ProteinTagger
 			set { if (_Tags != value) { _Tags = value; RaisePropertyChanged("Tags"); } }
 		}
 		List<string> _Tags;
-
-		public void ExportTags(string filename)
+				
+		public object Stats
 		{
-			_ProteinDB.SaveJsonFile(filename);
+			get { return _Stats; }
+			set { if (_Stats != value) { _Stats = value; RaisePropertyChanged("Stats"); } }
 		}
+		object _Stats;
 	}
 }
