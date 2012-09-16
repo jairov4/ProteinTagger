@@ -31,6 +31,7 @@ namespace ProteinTagger
 		}
 
 		MainViewModel ViewModel;
+		uniprot db;
 
 		private void dgChainNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
@@ -45,7 +46,7 @@ namespace ProteinTagger
 			dialog.Filter = "UniProt XML File (*.xml)|*.xml|All files (*.*)|*.*";
 			if (dialog.ShowDialog() == true)
 			{
-				var db = uniprot.LoadFromFile(dialog.FileName);
+				db = uniprot.LoadFromFile(dialog.FileName);
 				ViewModel.SetupFromUniProt(db);
 			}
 		}
@@ -73,7 +74,6 @@ namespace ProteinTagger
 			}
 		}
 
-
 		private void btnExportTagged_Click(object sender, RoutedEventArgs e)
 		{
 			SaveFileDialog dialog = new SaveFileDialog();
@@ -90,6 +90,19 @@ namespace ProteinTagger
 			var str = sender as ContentControl;
 			var tag = str.Content as string;
 			ViewModel.RecordTagByDescription(tag, true);
+		}
+
+		private void btnExportCleavageSites_Click(object sender, RoutedEventArgs e)
+		{
+			if (db == null)
+			{
+				MessageBox.Show("UniProt Dataset has not been loaded");
+				return;
+			}
+			var dlg = new WPFFolderBrowser.WPFFolderBrowserDialog();
+			dlg.Title = "Export cleavage sites to folder";
+			dlg.ShowDialog();
+			CleavageSitesExporter.Export(ViewModel, db, dlg.FileName);
 		}
 	}
 }

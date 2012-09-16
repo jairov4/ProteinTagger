@@ -91,6 +91,14 @@
 				</DataGrid>
 			</Grid>
 		</TabItem>
+		<TabItem Header="Tools">
+			<StackPanel>
+				<StackPanel Margin="8">
+					<Button Click="btnExportCleavageSites_Click">Export cleavage sites with tagged chains</Button>
+					<ProgressBar Height="8"></ProgressBar>
+				</StackPanel>
+			</StackPanel>
+		</TabItem>
 		<TabItem Header="Log">
 			<TextBox x:Name="txtLog" Background="DarkBlue" Foreground="White" IsReadOnly="True" IsReadOnlyCaretVisible="True" VerticalScrollBarVisibility="Auto" />
 		</TabItem>
