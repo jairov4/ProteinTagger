@@ -31,14 +31,15 @@ namespace ProteinTagger
 									 where j.accession.Contains(i.Accession)
 									 select new
 									 {
-										 Accession = j.accession.First(),
-										 Site = i.Tags,
-										 LengthChain1 = j.GetChain(i.ChainIndex).GetFeatureLength(),
-										 Chain1 = j.GetChainSequence(i.ChainIndex),
-										 Chain2 = j.GetChainSequence(i.ChainIndex + 1)
+										 accession = j.accession.First(),
+										 site = i.Tags,
+										 chainIndex1 = i.ChainIndex,
+										 chainLength1 = j.GetChain(i.ChainIndex).GetFeatureLength(),
+										 chainSequence1 = j.GetChainSequence(i.ChainIndex),
+										 chainSequence2 = j.GetChainSequence(i.ChainIndex + 1)
 									 };
 			
-			var p = from c in pairs1 group c by c.Site;
+			var p = from c in pairs1 group c by c.site;
 			foreach (var item in p)
 			{
 				var fn = string.Format("{0}.json", item.Key);
