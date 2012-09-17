@@ -20,9 +20,9 @@ namespace ProteinTagger
 		{
 			Log("Building chain names from UniProt dataset");
 			var proteinDB = from entry in db.entry
-											let chains = entry.GetChains().ToList()
+											let chains = entry.GetChains().ToArray()
 											from chain in chains
-											let chainIndex = chains.IndexOf(chain)
+											let chainIndex = Array.IndexOf(chains, chain)
 											select new ChainDescriptor
 											{
 												ChainId = string.Format("{0}-{1}", entry.accession[0], chainIndex),
@@ -112,7 +112,7 @@ namespace ProteinTagger
 		{
 			ChainNames = ProteinDB
 				.Where(x => string.IsNullOrWhiteSpace(x.Tag))
-				.GroupBy(x => x.Tag ?? (x.Description ?? string.Empty))
+				.GroupBy(x => x.Description ?? string.Empty)
 				.Select(x => new ChainNameGroup
 				{
 					Name = x.Key,
@@ -123,7 +123,13 @@ namespace ProteinTagger
 					Chains = x.AsEnumerable()
 				});
 			Log("{0} chain names found in {1} chains", ChainNames.Count(), ProteinDB.Count());
-			Stats = ProteinDB.GroupBy(x => x.Tag).Select(x => new { Tag = x.Key, Count = x.Count() });
+			Stats = ProteinDB
+				.GroupBy(x => x.Tag)
+				.Select(x => new 
+				{ 
+					Tag = x.Key, 
+					Count = x.Count() 
+				});
 			OnSelectedChainNamesChanged();
 		}
 

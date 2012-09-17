@@ -23,15 +23,14 @@ namespace ProteinTagger
 	{
 		public MainWindow()
 		{
-			InitializeComponent();
-			ViewModel = new MainViewModel();
+			InitializeComponent();			
 			ViewModel.LogFn = x => { txtLog.AppendText(x); txtLog.AppendText("\n"); };
 			ViewModel.Tags.AddRange(new[] { "P1", "HC", "P3", "6K1", "CI", "6K2", "VPg", "NIa", "NIb", "CP" });
 			DataContext = ViewModel;
 		}
 
-		MainViewModel ViewModel;
-		uniprot db;
+		MainViewModel ViewModel = new MainViewModel();
+		Dictionary<string, entry> uniprotDB = new Dictionary<string, entry>();
 
 		private void dgChainNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
@@ -46,8 +45,21 @@ namespace ProteinTagger
 			dialog.Filter = "UniProt XML File (*.xml)|*.xml|All files (*.*)|*.*";
 			if (dialog.ShowDialog() == true)
 			{
-				db = uniprot.LoadFromFile(dialog.FileName);
+				var db = uniprot.LoadFromFile(dialog.FileName);
 				ViewModel.SetupFromUniProt(db);
+				MakeUniprotDictionary(db);
+			}
+		}
+
+		private void MakeUniprotDictionary(uniprot db)
+		{
+			uniprotDB.Clear();
+			foreach (var item in db.entry)
+			{
+				foreach (var accession in item.accession)
+				{
+					uniprotDB.Add(accession, item);
+				}
 			}
 		}
 
@@ -94,7 +106,7 @@ namespace ProteinTagger
 
 		private void btnExportCleavageSites_Click(object sender, RoutedEventArgs e)
 		{
-			if (db == null)
+			if (uniprotDB.Count == 0)
 			{
 				MessageBox.Show("UniProt Dataset has not been loaded");
 				return;
@@ -102,7 +114,7 @@ namespace ProteinTagger
 			var dlg = new WPFFolderBrowser.WPFFolderBrowserDialog();
 			dlg.Title = "Export cleavage sites to folder";
 			dlg.ShowDialog();
-			CleavageSitesExporter.Export(ViewModel, db, dlg.FileName, v => pbrExportCleavageSites.Value = v);
+			CleavageSitesExporter.Export(ViewModel, uniprotDB, dlg.FileName, v => pbrExportCleavageSites.Value = v);
 			pbrExportCleavageSites.Value = 0;
 		}
 	}
