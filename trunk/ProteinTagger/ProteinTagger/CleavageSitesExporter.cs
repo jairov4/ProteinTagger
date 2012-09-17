@@ -10,7 +10,7 @@ namespace ProteinTagger
 {
 	public class CleavageSitesExporter
 	{
-		public static void Export(MainViewModel vm, uniprot db, string folderPath, Action<int> r)
+		public static void Export(MainViewModel vm, Dictionary<string, entry> db, string folderPath, Action<int> r)
 		{			
 			var pairs0 = from c in vm.ProteinDB
 									 from d in vm.ProteinDB
@@ -27,8 +27,7 @@ namespace ProteinTagger
 									 };
 			
 			var pairs1 = from i in pairs0
-									 from j in db.entry
-									 where j.accession.Contains(i.Accession)
+									 let j = db[i.Accession]
 									 select new
 									 {
 										 accession = j.accession.First(),
