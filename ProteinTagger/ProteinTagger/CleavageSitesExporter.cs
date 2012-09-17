@@ -22,7 +22,7 @@ namespace ProteinTagger
 									 select new
 									 {
 										 c.Accession,
-										 Tags = string.Format("{0}|{1}", c.Tag, d.Tag),
+										 Tags = string.Format("{0}_{1}", c.Tag, d.Tag),
 										 c.ChainIndex
 									 };
 
@@ -31,6 +31,7 @@ namespace ProteinTagger
 									 where j.accession.Contains(i.Accession)
 									 select new
 									 {
+										 Accession = j.accession.First(),
 										 Site = i.Tags,
 										 LengthChain1 = j.GetChain(i.ChainIndex).GetFeatureLength(),
 										 Chain1 = j.GetChainSequence(i.ChainIndex),
