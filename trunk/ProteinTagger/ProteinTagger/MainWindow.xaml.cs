@@ -102,7 +102,8 @@ namespace ProteinTagger
 			var dlg = new WPFFolderBrowser.WPFFolderBrowserDialog();
 			dlg.Title = "Export cleavage sites to folder";
 			dlg.ShowDialog();
-			CleavageSitesExporter.Export(ViewModel, db, dlg.FileName);
+			CleavageSitesExporter.Export(ViewModel, db, dlg.FileName, v => pbrExportCleavageSites.Value = v);
+			pbrExportCleavageSites.Value = 0;
 		}
 	}
 }

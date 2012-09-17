@@ -95,7 +95,7 @@
 			<StackPanel>
 				<StackPanel Margin="8">
 					<Button Click="btnExportCleavageSites_Click">Export cleavage sites with tagged chains</Button>
-					<ProgressBar Height="8"></ProgressBar>
+					<ProgressBar x:Name="pbrExportCleavageSites" Height="8"></ProgressBar>
 				</StackPanel>
 			</StackPanel>
 		</TabItem>
