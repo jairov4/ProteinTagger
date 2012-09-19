@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProteinTagger", "ProteinTagger\ProteinTagger.csproj", "{98A1C69A-02B8-481C-B094-F25C7F3E46BF}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ProteinTaggerSetup", "ProteinTaggerSetup\ProteinTaggerSetup.vdproj", "{0180D80E-51E5-4CB4-ADEE-C7C4E84EC0C0}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +19,8 @@ Global
 		{98A1C69A-02B8-481C-B094-F25C7F3E46BF}.Debug|x86.Build.0 = Debug|x86
 		{98A1C69A-02B8-481C-B094-F25C7F3E46BF}.Release|x86.ActiveCfg = Release|x86
 		{98A1C69A-02B8-481C-B094-F25C7F3E46BF}.Release|x86.Build.0 = Release|x86
+		{0180D80E-51E5-4CB4-ADEE-C7C4E84EC0C0}.Debug|x86.ActiveCfg = Debug
+		{0180D80E-51E5-4CB4-ADEE-C7C4E84EC0C0}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
