@@ -278,12 +278,12 @@ namespace ProteinTagger
 		/// <summary>
 		/// Tags available
 		/// </summary>
-		public List<string> Tags
+		public ObservableCollection<string> Tags
 		{
-			get { return _Tags ?? (Tags = new List<string>()); }
+			get { return _Tags ?? (Tags = new ObservableCollection<string>()); }
 			set { if (_Tags != value) { _Tags = value; RaisePropertyChanged("Tags"); } }
 		}
-		List<string> _Tags;
+		ObservableCollection<string> _Tags;
 				
 		public object Stats
 		{
