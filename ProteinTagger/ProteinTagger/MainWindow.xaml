@@ -102,5 +102,17 @@
 		<TabItem Header="Log">
 			<TextBox x:Name="txtLog" Background="DarkBlue" Foreground="White" IsReadOnly="True" IsReadOnlyCaretVisible="True" VerticalScrollBarVisibility="Auto" />
 		</TabItem>
+		<TabItem Header="About...">
+
+			<TextBlock FontSize="36" TextAlignment="Center" VerticalAlignment="Center">
+				ProteinTagger - Version 1.0<LineBreak />
+				DESTINO Research Group<LineBreak />
+				Pontificia Universidad Javeriana Cali<LineBreak />				
+				Copyright (C) Jairo Andres Velasco Romero, 2012<LineBreak />
+				<Hyperlink NavigateUri="https://protein-tagger.googlecode.com/" RequestNavigate="Hyperlink_RequestNavigate">https://protein-tagger.googlecode.com/</Hyperlink>	<LineBreak />				
+				<Hyperlink NavigateUri="http://destino.javerianacali.edu.co/" RequestNavigate="Hyperlink_RequestNavigate">http://destino.javerianacali.edu.co/</Hyperlink><LineBreak />
+			</TextBlock>			
+
+		</TabItem>
 	</TabControl>
 </Window>
