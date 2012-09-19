@@ -52,12 +52,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0187E9AA665BE008E1375FAED76D49B6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_41FCB570758C4840906594A56FB170DF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -79,6 +73,12 @@
         "OwnerKey" = "8:_1579FA748EAF6BCC7A1964B369C56AB4"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0187E9AA665BE008E1375FAED76D49B6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -97,6 +97,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -113,6 +121,27 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -323,7 +352,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ProteinTagger"
         "ProductCode" = "8:{49B930CF-9969-4E56-8A27-DAD896AB1BA3}"
-        "PackageCode" = "8:{4ECF5C86-516A-4FBD-B4DA-C83E39C8744F}"
+        "PackageCode" = "8:{F8DEF5E0-BF6F-4E28-8D2A-9D2AF348033C}"
         "UpgradeCode" = "8:{3301B3D8-2849-4A06-A685-6E475855F3AF}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -449,12 +478,12 @@
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
             "Target" = "8:_41FCB570758C4840906594A56FB170DF"
             "Folder" = "8:_DCD69A54913A48B5A6DE34C9F74AE8B6"
             "WorkingFolder" = "8:_190BD4C8F1E64844A21B5DB92C325277"
-            "Icon" = "8:"
+            "Icon" = "8:_41FCB570758C4840906594A56FB170DF"
             "Feature" = "8:"
             }
         }
@@ -858,7 +887,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_41FCB570758C4840906594A56FB170DF"
             {
-            "SourcePath" = "8:..\\ProteinTagger\\obj\\x86\\Release\\ProteinTagger.exe"
+            "SourcePath" = "8:..\\ProteinTagger\\obj\\Release\\ProteinTagger.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_190BD4C8F1E64844A21B5DB92C325277"

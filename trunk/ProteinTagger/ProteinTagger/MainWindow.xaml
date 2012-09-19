@@ -123,6 +123,7 @@
 				DESTINO Research Group<LineBreak />
 				Pontificia Universidad Javeriana Cali<LineBreak />				
 				Copyright (C) Jairo Andres Velasco Romero, 2012<LineBreak />
+				Web support and documentation<LineBreak />
 				<Hyperlink NavigateUri="https://protein-tagger.googlecode.com/" RequestNavigate="Hyperlink_RequestNavigate">https://protein-tagger.googlecode.com/</Hyperlink>	<LineBreak />				
 				<Hyperlink NavigateUri="http://destino.javerianacali.edu.co/" RequestNavigate="Hyperlink_RequestNavigate">http://destino.javerianacali.edu.co/</Hyperlink><LineBreak />
 			</TextBlock>
