@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using Biosek.Formats.UniProt;
+using System.Diagnostics;
 
 namespace ProteinTagger
 {
@@ -116,6 +117,12 @@ namespace ProteinTagger
 			dlg.ShowDialog();
 			CleavageSitesExporter.Export(ViewModel, uniprotDB, dlg.FileName, v => pbrExportCleavageSites.Value = v);
 			pbrExportCleavageSites.Value = 0;
+		}
+
+		private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+		{
+			Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+			e.Handled = true;
 		}
 	}
 }
