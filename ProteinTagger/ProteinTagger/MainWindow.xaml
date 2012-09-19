@@ -7,6 +7,10 @@
 			<Style TargetType="TextBlock" x:Key="NumericColumnStyle">
 				<Setter Property="TextAlignment" Value="Right" />
 			</Style>
+			<Style TargetType="MenuItem">
+				<Setter Property="FontFamily" Value="Segoe UI Light" />
+				<Setter Property="FontSize" Value="24" />
+			</Style>
 		</ResourceDictionary>
 	</Window.Resources>
 	<TabControl>
@@ -46,6 +50,15 @@
 				<DockPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="10,0">
 					<Button DockPanel.Dock="Right" Padding="10,0" Click="btnLoadUniProt_Click">Load UniProt XML</Button>
 					<Button Margin="10,0" DockPanel.Dock="Right" Padding="10,0" Click="btnExportTagged_Click">Export Data</Button>
+					<Menu>
+						<MenuItem Header="Edit">
+							<MenuItem Header="Add" />
+							<TextBox></TextBox>
+							<Separator />
+							<MenuItem Header="Remove" ItemsSource="{Binding Tags}" Click="btnRemoveTag_Click" />
+						</MenuItem>
+					</Menu>
+
 					<ListBox x:Name="lstTags" Margin="0,0,0,0" ItemsSource="{Binding Tags}" IsEnabled="{Binding IsTagAllowed}">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
@@ -111,7 +124,7 @@
 				Copyright (C) Jairo Andres Velasco Romero, 2012<LineBreak />
 				<Hyperlink NavigateUri="https://protein-tagger.googlecode.com/" RequestNavigate="Hyperlink_RequestNavigate">https://protein-tagger.googlecode.com/</Hyperlink>	<LineBreak />				
 				<Hyperlink NavigateUri="http://destino.javerianacali.edu.co/" RequestNavigate="Hyperlink_RequestNavigate">http://destino.javerianacali.edu.co/</Hyperlink><LineBreak />
-			</TextBlock>			
+			</TextBlock>
 
 		</TabItem>
 	</TabControl>

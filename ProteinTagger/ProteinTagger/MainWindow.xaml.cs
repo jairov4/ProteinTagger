@@ -24,9 +24,12 @@ namespace ProteinTagger
 	{
 		public MainWindow()
 		{
-			InitializeComponent();			
+			InitializeComponent();
 			ViewModel.LogFn = x => { txtLog.AppendText(x); txtLog.AppendText("\n"); };
-			ViewModel.Tags.AddRange(new[] { "P1", "HC", "P3", "6K1", "CI", "6K2", "VPg", "NIa", "NIb", "CP" });
+			foreach (var i in new[] { "P1", "HC", "P3", "6K1", "CI", "6K2", "VPg", "NIa", "NIb", "CP" })
+			{
+				ViewModel.Tags.Add(i);
+			}
 			DataContext = ViewModel;
 		}
 
@@ -123,6 +126,13 @@ namespace ProteinTagger
 		{
 			Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
 			e.Handled = true;
+		}
+
+		private void btnRemoveTag_Click(object sender, RoutedEventArgs e)
+		{
+			var mi = e.OriginalSource as MenuItem;
+			if (mi == null) return;
+			ViewModel.Tags.Remove(mi.Header as string);
 		}
 	}
 }
