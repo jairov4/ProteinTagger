@@ -52,10 +52,11 @@
 					<Button Margin="10,0" DockPanel.Dock="Right" Padding="10,0" Click="btnExportTagged_Click">Export Data</Button>
 					<Menu>
 						<MenuItem Header="Edit">
-							<MenuItem Header="Add" />
-							<TextBox></TextBox>
+							<MenuItem Header="Add" Click="btnAddTag_Click" />
+							<TextBox x:Name="txtNewTag"></TextBox>
 							<Separator />
 							<MenuItem Header="Remove" ItemsSource="{Binding Tags}" Click="btnRemoveTag_Click" />
+							<MenuItem Header="Remove all" Click="btnRemoveAll_Click" />
 						</MenuItem>
 					</Menu>
 

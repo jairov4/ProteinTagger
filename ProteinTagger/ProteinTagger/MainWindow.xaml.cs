@@ -134,5 +134,23 @@ namespace ProteinTagger
 			if (mi == null) return;
 			ViewModel.Tags.Remove(mi.Header as string);
 		}
+
+		private void btnAddTag_Click(object sender, RoutedEventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(txtNewTag.Text))
+			{
+				MessageBox.Show("New tag can not be empty");
+			}
+			else
+			{
+				ViewModel.Tags.Add(txtNewTag.Text);
+				txtNewTag.Text = string.Empty;
+			}
+		}
+
+		private void btnRemoveAll_Click(object sender, RoutedEventArgs e)
+		{
+			ViewModel.Tags.Clear();
+		}
 	}
 }
