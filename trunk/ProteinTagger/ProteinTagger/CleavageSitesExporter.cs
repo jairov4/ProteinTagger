@@ -10,7 +10,14 @@ namespace ProteinTagger
 {
 	public class CleavageSitesExporter
 	{
-		public static void Export(MainViewModel vm, Dictionary<string, entry> db, string folderPath, Action<int> r)
+		/// <summary>
+		/// Export cleavage site information for each cleavage site detected.
+		/// Information is written per cleavage site in a JSON file.
+		/// </summary>
+		/// <param name="vm">Main Application ViewModel</param>
+		/// <param name="db">whole dataset</param>
+		/// <param name="folderPath">Output folder path where JSON files will be written</param>
+		public static void Export(MainViewModel vm, Dictionary<string, entry> db, string folderPath)
 		{
 			var pairs0 = from c in vm.ProteinDB
 									 from d in vm.ProteinDB
