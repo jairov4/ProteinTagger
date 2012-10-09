@@ -142,7 +142,7 @@ namespace ProteinTagger
 		}
 
 		/// <summary>
-		/// Compute filtered change order from selected chain name group
+		/// Compute filtered chain collection from selected chain name group
 		/// </summary>
 		private void OnSelectedChainNamesChanged()
 		{
