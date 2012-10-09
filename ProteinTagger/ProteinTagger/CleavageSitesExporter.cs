@@ -11,7 +11,7 @@ namespace ProteinTagger
 	public class CleavageSitesExporter
 	{
 		public static void Export(MainViewModel vm, Dictionary<string, entry> db, string folderPath, Action<int> r)
-		{			
+		{
 			var pairs0 = from c in vm.ProteinDB
 									 from d in vm.ProteinDB
 									 where
@@ -22,29 +22,21 @@ namespace ProteinTagger
 									 select new
 									 {
 										 c.Accession,
-										 Tags = string.Format("{0}_{1}", c.Tag, d.Tag),
-										 c.ChainIndex
+										 Tag1 = c.Tag,
+										 Tag2 = d.Tag,
+										 ChainIndex1 = c.ChainIndex,
+										 ChainIndex2 = d.ChainIndex,
+										 LocationBegin = c.LocationEnd,
+										 LocationEnd = d.LocationBegin
 									 };
-			
-			var pairs1 = from i in pairs0
-									 let j = db[i.Accession]
-									 select new
-									 {
-										 accession = j.accession.First(),
-										 site = i.Tags,
-										 chainIndex1 = i.ChainIndex,
-										 chainLength1 = j.GetChain(i.ChainIndex).GetFeatureLength(),
-										 chainSequence1 = j.GetChainSequence(i.ChainIndex),
-										 chainSequence2 = j.GetChainSequence(i.ChainIndex + 1)
-									 };
-			
-			var p = from c in pairs1 group c by c.site;
+
+			var p = from c in pairs0 group c by string.Concat(c.Tag1, "_", c.Tag2);
 			foreach (var item in p)
 			{
 				var fn = string.Format("{0}.json", item.Key);
 				fn = Path.Combine(folderPath, fn);
 				item.ToArray().SaveJsonFile(fn);
-			}			
+			}
 		}
 	}
 }
