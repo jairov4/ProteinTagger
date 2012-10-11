@@ -15,26 +15,26 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0187E9AA665BE008E1375FAED76D49B6"
-        "OwnerKey" = "8:_41FCB570758C4840906594A56FB170DF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0187E9AA665BE008E1375FAED76D49B6"
-        "OwnerKey" = "8:_1579FA748EAF6BCC7A1964B369C56AB4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1579FA748EAF6BCC7A1964B369C56AB4"
-        "OwnerKey" = "8:_41FCB570758C4840906594A56FB170DF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_41FCB570758C4840906594A56FB170DF"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_74A662381A66546C830C7DEA686AC3FD"
+        "OwnerKey" = "8:_837C22351DA7B19F4923F7049E72191C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_74A662381A66546C830C7DEA686AC3FD"
+        "OwnerKey" = "8:_41FCB570758C4840906594A56FB170DF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_837C22351DA7B19F4923F7049E72191C"
+        "OwnerKey" = "8:_41FCB570758C4840906594A56FB170DF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -45,7 +45,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_AA22C9031FD5B6B051688D4F204F66D6"
+        "MsmKey" = "8:_A96290CFC63AAB6291A15BC17059A443"
         "OwnerKey" = "8:_41FCB570758C4840906594A56FB170DF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,19 +64,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AA22C9031FD5B6B051688D4F204F66D6"
+        "OwnerKey" = "8:_A96290CFC63AAB6291A15BC17059A443"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1579FA748EAF6BCC7A1964B369C56AB4"
+        "OwnerKey" = "8:_837C22351DA7B19F4923F7049E72191C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0187E9AA665BE008E1375FAED76D49B6"
+        "OwnerKey" = "8:_74A662381A66546C830C7DEA686AC3FD"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -104,6 +104,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -171,14 +184,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0187E9AA665BE008E1375FAED76D49B6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_74A662381A66546C830C7DEA686AC3FD"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0187E9AA665BE008E1375FAED76D49B6"
+                    "_74A662381A66546C830C7DEA686AC3FD"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -202,20 +215,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1579FA748EAF6BCC7A1964B369C56AB4"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_837C22351DA7B19F4923F7049E72191C"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Biosek.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Biosek, Version=1.0.4666.36443, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1579FA748EAF6BCC7A1964B369C56AB4"
+                    "_837C22351DA7B19F4923F7049E72191C"
                     {
-                    "Name" = "8:Biosek.Core.dll"
+                    "Name" = "8:Biosek.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Biosek.Core.dll"
+            "SourcePath" = "8:Biosek.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_190BD4C8F1E64844A21B5DB92C325277"
@@ -264,14 +277,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AA22C9031FD5B6B051688D4F204F66D6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A96290CFC63AAB6291A15BC17059A443"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CsvHelper, Version=1.4.0.36028, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:CsvHelper, Version=1.8.0.22497, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_AA22C9031FD5B6B051688D4F204F66D6"
+                    "_A96290CFC63AAB6291A15BC17059A443"
                     {
                     "Name" = "8:CsvHelper.dll"
                     "Attributes" = "3:512"
@@ -352,7 +365,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ProteinTagger"
         "ProductCode" = "8:{49B930CF-9969-4E56-8A27-DAD896AB1BA3}"
-        "PackageCode" = "8:{F8DEF5E0-BF6F-4E28-8D2A-9D2AF348033C}"
+        "PackageCode" = "8:{8794D554-2A23-47CD-989E-106ED5699684}"
         "UpgradeCode" = "8:{3301B3D8-2849-4A06-A685-6E475855F3AF}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
