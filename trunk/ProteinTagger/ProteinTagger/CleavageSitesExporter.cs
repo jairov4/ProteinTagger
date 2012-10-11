@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Biosek.Formats.UniProt;
-using Biosek.Core;
+using Biosek;
 using System.IO;
 
 namespace ProteinTagger

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Biosek.Core;
+using Biosek;
 using Biosek.Formats.UniProt;
 using System.Collections;
 using System.Collections.ObjectModel;
