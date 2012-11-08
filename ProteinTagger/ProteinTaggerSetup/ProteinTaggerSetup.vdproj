@@ -365,7 +365,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ProteinTagger"
         "ProductCode" = "8:{49B930CF-9969-4E56-8A27-DAD896AB1BA3}"
-        "PackageCode" = "8:{8794D554-2A23-47CD-989E-106ED5699684}"
+        "PackageCode" = "8:{7110C1E0-A084-4CD8-9647-075301E218FE}"
         "UpgradeCode" = "8:{3301B3D8-2849-4A06-A685-6E475855F3AF}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -900,7 +900,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_41FCB570758C4840906594A56FB170DF"
             {
-            "SourcePath" = "8:..\\ProteinTagger\\obj\\Release\\ProteinTagger.exe"
+            "SourcePath" = "8:..\\ProteinTagger\\obj\\x86\\Release\\ProteinTagger.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_190BD4C8F1E64844A21B5DB92C325277"
