@@ -7,3 +7,5 @@ This application helps to tag biosequences from UniProt repositories in order to
 - Export your new information
 
 [![Build status](https://ci.appveyor.com/api/projects/status/wvo7nd48iqmtpaev?svg=true)](https://ci.appveyor.com/project/jairov4/proteintagger)
+
+[How to use](https://www.youtube.com/watch?v=yJNEkx86-4w)
